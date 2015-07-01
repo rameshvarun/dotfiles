@@ -9,3 +9,6 @@ ln -s $PWD/.emacs.d ~/.emacs.d
 
 # Mjolnir
 ln -s $PWD/.mjolnir ~/.mjolnir
+
+# Aliases
+ln -s $PWD/.aliases ~/.aliases
