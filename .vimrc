@@ -5,7 +5,7 @@ filetype plugin indent on
 " Monokai syntax highlighting
 syntax enable
 set background=dark
-colorscheme base16-monokai
+colorscheme jellybeans
 
 set number
 
