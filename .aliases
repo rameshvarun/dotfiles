@@ -21,3 +21,17 @@ export LESS='-R'
 # Editors
 alias e=emacs
 alias v=vim
+alias s=subl
+alias a=atom
+
+# Git aliases
+alias g=git
+
+# Command to open the current directory in a folder viewer
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias o="nautilus ."
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	alias o="open ."
+elif [[ "$OSTYPE" == "msys" ]]; then
+	alias o="explorer ."
+fi
