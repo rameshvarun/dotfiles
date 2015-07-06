@@ -8,3 +8,6 @@ set background=dark
 colorscheme base16-monokai
 
 set number
+
+" Enable project specific .vimrc files
+set exrc
