@@ -5,6 +5,6 @@ filetype plugin indent on
 " Monokai syntax highlighting
 syntax enable
 set background=dark
-colorscheme monokai
+colorscheme base16-monokai
 
 set number
