@@ -37,3 +37,18 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "msys" ]]; then
 	alias o="explorer ."
 fi
+
+# Command to pipe into the clipboard
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias clip="xclip -selection c"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	alias clip="pbcopy"
+fi
+
+# Command to print out the clipboard
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias paste="xclip -selection clipboard -o"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	alias paste="pbpaste"
+fi
+
