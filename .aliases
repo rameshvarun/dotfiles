@@ -27,6 +27,8 @@ alias a=atom
 # Git aliases
 alias g=git
 
+alias jsonfmt="python -m json.tool"
+
 # Command to open the current directory in a folder viewer
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias o="nautilus ."

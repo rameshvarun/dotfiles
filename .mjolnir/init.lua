@@ -6,7 +6,6 @@ local grid = require "mjolnir.sd.grid"
 local hotkey = require "mjolnir.hotkey"
 local hints = require "mjolnir.th.hints"
 
-
 local makeGridFunc = function(grid_w, grid_h)
     return function(x, y, w, h)
 	grid.MARGINX = 0
