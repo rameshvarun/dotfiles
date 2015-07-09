@@ -26,6 +26,18 @@ alias a=atom
 
 # Git aliases
 alias g=git
+alias gs="git status"
+alias gc="git commit"
+alias gp="git pull"
+alias gd="git diff"
+alias ga="git add"
+
+# Mercurial aliases
+alias hs="hg status"
+alias hc="hg commit"
+alias hr="hg rebase"
+alias hsl="hg sl"
+alias hd="hg diff"
 
 alias jsonfmt="python -m json.tool"
 
