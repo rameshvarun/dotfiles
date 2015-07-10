@@ -11,3 +11,11 @@ If submodules have been added since the last `git pull`, you need to run:
 ```bash
 git submodule update --init --recursive
 ```
+
+## Tools
+
+```bash
+sudo npm install -g ttystudio
+sudo npm install -g todo-list
+sudo gem install catpix
+```
