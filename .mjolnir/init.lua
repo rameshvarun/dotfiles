@@ -21,9 +21,9 @@ local makeGridFunc = function(grid_w, grid_h)
         )
     end
 end
-twoByTwo = makeGridFunc(2, 2) -- Split the screen into four parts
-threeByTwo = makeGridFunc(3,2) -- Split the screen into six segments
 
+--[[ Snap windows to a two by two grid ]]--
+twoByTwo = makeGridFunc(2, 2) -- Split the screen into four parts
 local mash = {"ctrl", "alt", "cmd"}
 
 hotkey.bind(mash, 'n', grid.pushwindow_nextscreen)
@@ -62,7 +62,7 @@ KEY = {
 }
 
 function bindKey(key)
-	hotkey.bind({"ctrl", "alt", "cmd"}, key, function()
+	hotkey.bind(mash, key, function()
 		KEY[key] = true
 		snap_window()
 	end, function() KEY[key] = false end)
@@ -72,6 +72,22 @@ bindKey('up')
 bindKey('down')
 bindKey('left')
 bindKey('right')
+
+--[[ Snap windows to a three by two grid ]]--
+threeByTwo = makeGridFunc(3,2) -- Split the screen into six segments
+
+-- Put a window in any one position in the grid
+hotkey.bind(mash, 'q', function() threeByTwo(0, 0, 1, 1) end)
+hotkey.bind(mash, 'a', function() threeByTwo(0, 1, 1, 1) end)
+hotkey.bind(mash, 'w', function() threeByTwo(1, 0, 1, 1) end)
+hotkey.bind(mash, 's', function() threeByTwo(1, 1, 1, 1) end)
+hotkey.bind(mash, 'e', function() threeByTwo(2, 0, 1, 1) end)
+hotkey.bind(mash, 'd', function() threeByTwo(2, 1, 1, 1) end)
+
+-- Take up an entire column of the grid
+hotkey.bind(mash, 'z', function() threeByTwo(0, 0, 1, 2) end)
+hotkey.bind(mash, 'x', function() threeByTwo(1, 0, 1, 2) end)
+hotkey.bind(mash, 'c', function() threeByTwo(2, 0, 1, 2) end)
 
 hotkey.bind(mash, 'm', grid.maximize_window)
 hotkey.bind({"cmd"},"e",hints.windowHints)
