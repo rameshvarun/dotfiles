@@ -13,10 +13,21 @@ set number
 set exrc
 
 " Use alt-space to go to normal mode
-:imap <M-Space> <Esc>
+imap <M-Space> <Esc>
 " Use space to enter insert mode
-:nmap <Space> i
+nmap <Space> i
 
 " Dont clutter directories with backup and swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
+
+" Make backspace behave normally
+set backspace=indent,eol,start
+
+" Move lines and blocks up and down
+nnoremap <C-Down> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
+inoremap <C-Down> <Esc>:m .+1<CR>==gi
+inoremap <C-Up> <Esc>:m .-2<CR>==gi
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv
