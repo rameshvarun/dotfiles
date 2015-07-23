@@ -24,6 +24,12 @@ set directory=~/.vim/swap
 " Make backspace behave normally
 set backspace=indent,eol,start
 
+" Up and down move along display lines, instead of physical lines
+noremap  <buffer> <silent> <Up>   gk
+noremap  <buffer> <silent> <Down> gj
+inoremap <buffer> <silent> <Up>   <C-o>gk
+inoremap <buffer> <silent> <Down> <C-o>gj
+
 " Move lines and blocks up and down
 nnoremap <C-Down> :m .+1<CR>==
 nnoremap <C-Up> :m .-2<CR>==
