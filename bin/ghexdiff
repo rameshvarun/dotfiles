@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+TMPFILES=()
+for var in "$@"
+do
+	TMPFILE="$(mktemp -t hexdiff)"
+	xxd $var > $TMPFILE
+	TMPFILES+=($TMPFILE)
+done
+
+gvimdiff ${TMPFILES[@]}
