@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+	cat - | python -m json.tool
+else
+	cat $1 | python -m json.tool
+fi
