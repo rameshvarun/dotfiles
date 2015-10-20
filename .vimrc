@@ -20,6 +20,10 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'bling/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Colorschemes
 Plug 'sickill/vim-monokai'
 Plug 'nanotech/jellybeans.vim'
