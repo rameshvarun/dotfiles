@@ -23,6 +23,7 @@ Plug 'Valloric/YouCompleteMe'
 " Colorschemes
 Plug 'sickill/vim-monokai'
 Plug 'nanotech/jellybeans.vim'
+Plug 'tomasr/molokai'
 call plug#end()
 
 filetype plugin indent on
@@ -30,7 +31,7 @@ filetype plugin indent on
 " Syntax highlighting
 syntax enable
 set background=dark
-colorscheme jellybeans
+colorscheme molokai
 
 set number
 
