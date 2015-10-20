@@ -1,8 +1,18 @@
-" Pathogen install
-execute pathogen#infect()
+set nocompatible
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Colorschemes
+Plug 'sickill/vim-monokai'
+Plug 'nanotech/jellybeans.vim'
+call plug#end()
+
 filetype plugin indent on
 
-" Monokai syntax highlighting
+" Syntax highlighting
 syntax enable
 set background=dark
 colorscheme jellybeans
