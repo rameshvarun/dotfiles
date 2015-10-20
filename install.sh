@@ -8,6 +8,9 @@ ln -s $PWD/.vimrc ~/.vimrc
 ln -s $PWD/.vim ~/.nvim
 ln -s $PWD/.vimrc ~/.nvimrc
 
+# Tmux files
+ln -s $PWD/.tmux ~/.tmux
+ln -s $PWD/.tmux.conf ~/.tmux.conf
 
 # Emacs files
 ln -s $PWD/.emacs.d ~/.emacs.d
