@@ -3,7 +3,20 @@ set nocompatible
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+
+Plug 'kchmck/vim-coffee-script'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-surround'
+
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'bling/vim-airline'
+Plug 'Valloric/YouCompleteMe'
 
 " Colorschemes
 Plug 'sickill/vim-monokai'
