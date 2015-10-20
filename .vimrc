@@ -13,6 +13,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 
+Plug 'tpope/vim-fugitive'
+
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'bling/vim-airline'
