@@ -10,6 +10,7 @@
 (push "~/.emacs.d/use-package" load-path)
 (require 'use-package)
 (use-package monokai-theme :ensure t)
+(use-package auto-complete :ensure t)
 
 ;; Window navigation
 (global-set-key (kbd "C-c <left>")  'windmove-left)
