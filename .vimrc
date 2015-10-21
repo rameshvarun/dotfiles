@@ -2,11 +2,12 @@ set nocompatible
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'majutsushi/tagbar'
 
 Plug 'kchmck/vim-coffee-script'
 Plug 'airblade/vim-gitgutter'
@@ -17,7 +18,6 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'bling/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 
 " Snippets
