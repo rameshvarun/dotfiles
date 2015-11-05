@@ -47,6 +47,14 @@ imap <M-Space> <Esc>
 " Use space to enter insert mode
 nmap <Space> i
 
+" Snippet bindings
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" Support mouse events
+set mouse=a
+
 " Dont clutter directories with backup and swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
