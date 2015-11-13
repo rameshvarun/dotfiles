@@ -20,6 +20,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'jrozner/vim-antlr'
+
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'

@@ -18,6 +18,7 @@
 (use-package lua-mode :ensure t)
 (use-package go-mode :ensure t)
 
+(use-package floobits :ensure t)
 ;; Window navigation
 (global-set-key (kbd "C-c <left>")  'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
