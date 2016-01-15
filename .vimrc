@@ -2,6 +2,10 @@ set nocompatible
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+
+Plug 'Shougo/vimproc'
+Plug 'Shougo/vimshell.vim'
+
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
@@ -12,6 +16,7 @@ Plug 'majutsushi/tagbar'
 Plug 'kchmck/vim-coffee-script'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-fugitive'
