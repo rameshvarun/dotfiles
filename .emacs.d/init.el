@@ -6,6 +6,9 @@
       (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+;; Enable xterm mouse mode.
+(xterm-mouse-mode)
+
 ;; List installed packages
 (push "~/.emacs.d/use-package" load-path)
 (require 'use-package)
@@ -19,6 +22,7 @@
 (use-package go-mode :ensure t)
 
 (use-package floobits :ensure t)
+
 ;; Window navigation
 (global-set-key (kbd "C-c <left>")  'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
@@ -48,3 +52,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+

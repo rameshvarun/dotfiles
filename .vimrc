@@ -66,6 +66,9 @@ set mouse=a
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 
+" Delete swap files with :ClearSwap command.
+command ClearSwap ! rm -f ~/.vim/swap/*.swp
+
 " Make backspace behave normally
 set backspace=indent,eol,start
 
