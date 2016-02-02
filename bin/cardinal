@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ssh -X vramesh2@cardinal.stanford.edu
