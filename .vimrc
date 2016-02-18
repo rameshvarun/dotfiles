@@ -7,6 +7,7 @@ Plug 'Shougo/vimproc'
 Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
 
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'rking/ag.vim', { 'on': 'Ag'  }
 Plug 'a.vim', { 'on': 'A' }
 
 Plug 'bling/vim-airline'

@@ -12,10 +12,13 @@
 ;; List installed packages
 (push "~/.emacs.d/use-package" load-path)
 (require 'use-package)
-(use-package monokai-theme :ensure t)
-(use-package magit :ensure t)
-(use-package auto-complete :ensure t)
 
+;; Magit requires at least emacs version 24.4
+(unless (version< emacs-version "24.4")
+  (use-package magit :ensure t))
+
+(use-package monokai-theme :ensure t)
+(use-package auto-complete :ensure t)
 (use-package haskell-mode :ensure t)
 (use-package markdown-mode :ensure t)
 (use-package lua-mode :ensure t)
