@@ -9,6 +9,13 @@
 ;; Enable xterm mouse mode.
 (xterm-mouse-mode)
 
+;; Set the default shell (prefer zsh, since emacs doesn't seem to be able to deal with
+;; ansi title bar sequences from fish).
+(push "~/.emacs.d/anaphora" load-path)
+(require 'anaphora)
+(aif (executable-find "zsh")
+  (setenv "ESHELL" it))
+
 ;; List installed packages
 (push "~/.emacs.d/use-package" load-path)
 (require 'use-package)
