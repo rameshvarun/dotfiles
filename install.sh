@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Vi mode in GNU Readline
+ln -s $PWD/.inputrc ~/.inputrc
+
 # Vim files
 ln -s $PWD/.vim ~/.vim
 ln -s $PWD/.vimrc ~/.vimrc
