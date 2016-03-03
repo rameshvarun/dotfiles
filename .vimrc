@@ -50,9 +50,25 @@ filetype plugin indent on
 " Syntax highlighting
 syntax enable
 set background=dark
-colorscheme molokai
+colorscheme molokai " Monokai theme.
 
-set number
+set laststatus=2 " Always have a stats bar.
+set number " Line numbers.
+set ruler " Column / line number.
+set wildmenu " Enhanced comand-line completion.
+set autoread " Automatically read changed files in.
+
+set incsearch " Incremental search.
+
+" If possible, leave a line above and below the cursor when scrolling.
+if !&scrolloff
+  set scrolloff=1
+endif
+
+" Larger history.
+if &history < 1000
+  set history=1000
+endif
 
 " Enable project specific .vimrc files
 set exrc
