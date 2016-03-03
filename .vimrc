@@ -11,7 +11,7 @@ Plug 'rking/ag.vim', { 'on': 'Ag'  }
 Plug 'a.vim', { 'on': 'A' }
 
 Plug 'bling/vim-airline'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 
