@@ -48,6 +48,9 @@ call plug#end()
 
 filetype plugin indent on
 
+" Arrows in NERDTree sometimes display incorrectly.
+let g:NERDTreeDirArrows=0
+
 " Syntax highlighting
 syntax enable
 set background=dark
