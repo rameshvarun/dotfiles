@@ -11,7 +11,7 @@ Plug 'rking/ag.vim', { 'on': 'Ag'  }
 Plug 'a.vim', { 'on': 'A' }
 
 Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 
@@ -24,6 +24,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb', { 'on': 'Gbrowse' }
 
 Plug 'lervag/vimtex'
 
