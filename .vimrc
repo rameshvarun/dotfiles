@@ -61,6 +61,7 @@ set number " Line numbers.
 set ruler " Column / line number.
 set wildmenu " Enhanced comand-line completion.
 set autoread " Automatically read changed files in.
+set hidden " Allow hidden buffers.
 
 set incsearch " Incremental search.
 
