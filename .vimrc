@@ -121,3 +121,15 @@ nmap <silent> <S-Down> :wincmd j<CR>
 nmap <silent> <S-Left> :wincmd h<CR>
 nmap <silent> <S-Right> :wincmd l<CR>
 
+" Setup :Shell command
+if has('nvim')
+ if executable('fish')
+  command Shell terminal fish
+ elseif executable('zsh')
+  command Shell terminal zsh
+ else
+  command Shell terminal
+ end
+else
+ command Shell VimShell
+end

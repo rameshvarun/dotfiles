@@ -42,6 +42,9 @@
 ;; Syntax highlighting
 (load-theme 'monokai t)
 
+;; Enable auto-complete
+(global-auto-complete-mode t)
+
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
