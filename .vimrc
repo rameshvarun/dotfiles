@@ -3,12 +3,22 @@ set nocompatible
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+" A shell that can run in vim. (Neovim has :terminal).
 Plug 'Shougo/vimproc'
 Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
 
+" Fast find in project.
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'rking/ag.vim', { 'on': 'Ag'  }
+
+" Switch between .c and .h rapidly.
 Plug 'a.vim', { 'on': 'A' }
+
+" Add custom names to tabs.
+Plug 'gcmt/taboo.vim'
+
+" Custom start screen.
+Plug 'mhinz/vim-startify'
 
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
@@ -17,22 +27,24 @@ Plug 'scrooloose/syntastic'
 
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 
-Plug 'kchmck/vim-coffee-script'
-Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 
+" Language-specific plugins.
+Plug 'kchmck/vim-coffee-script' " Coffeescript
+Plug 'fatih/vim-go'             " Golang
+Plug 'rust-lang/rust.vim'       " Rust
+Plug 'jrozner/vim-antlr'        " Antlr (grammar files)
+Plug 'lervag/vimtex'            " Latex
+
+" Git and GitHub utilities.
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb', { 'on': 'Gbrowse' }
 
-Plug 'lervag/vimtex'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'Valloric/YouCompleteMe'
-
-Plug 'jrozner/vim-antlr'
 
 " Snippets
 Plug 'SirVer/ultisnips'
