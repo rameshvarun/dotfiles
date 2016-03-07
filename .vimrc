@@ -63,6 +63,13 @@ filetype plugin indent on
 " Arrows in NERDTree sometimes display incorrectly.
 let g:NERDTreeDirArrows=0
 
+" Use airline's better tabline.
+let g:airline#extensions#tabline#enabled = 1
+
+" Airline-Taboo integration.
+let g:taboo_tabline = 0
+let g:airline#extensions#taboo#enabled = 1
+
 " Syntax highlighting
 syntax enable
 set background=dark
