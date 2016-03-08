@@ -24,26 +24,49 @@
 (unless (version< emacs-version "24.4")
   (use-package magit :ensure t))
 
-(use-package monokai-theme :ensure t)
-(use-package auto-complete :ensure t)
-(use-package haskell-mode :ensure t)
-(use-package markdown-mode :ensure t)
-(use-package lua-mode :ensure t)
-(use-package go-mode :ensure t)
+;; Monokai color scheme.
+(use-package monokai-theme
+  :ensure t
+  :config (load-theme 'monokai t))
 
+;; Autocomplete.
+(use-package auto-complete
+  :ensure t
+  :config (global-auto-complete-mode t))
+
+;; Vim emulation layer.
+(use-package evil
+  :ensure t)
+
+;; Helm package.
+(use-package helm
+  :ensure t
+  :config (progn
+	    (helm-mode 1)
+	    (global-set-key (kbd "M-x") 'helm-M-x) ;; Use helm-M-x
+	    (global-set-key (kbd "C-x C-f") 'helm-find-files) ;; Use helm-find-files
+	    ))
+
+;; Modes for various languages.
+(use-package haskell-mode :ensure t) ;; Haskell
+(use-package markdown-mode :ensure t) ;; Markdown
+(use-package lua-mode :ensure t) ;; Lua
+(use-package go-mode :ensure t) ;; Golang.
+
+;; The famous org-mode
+(use-package org :ensure t)
+
+;; Floobits collaboration.
 (use-package floobits :ensure t)
+
+;; C-x C-b invokes buffer-menu instead of list-buffers
+(global-set-key "\C-x\C-b" 'buffer-menu)
 
 ;; Window navigation
 (global-set-key (kbd "C-c <left>")  'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
-
-;; Syntax highlighting
-(load-theme 'monokai t)
-
-;; Enable auto-complete
-(global-auto-complete-mode t)
 
 (setq
    backup-by-copying t      ; don't clobber symlinks
@@ -58,7 +81,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("0a1a7f64f8785ffbf5b5fbe8bca1ee1d9e1fb5e505ad9a0f184499fe6747c1af" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "0b6645497e51d80eda1d337d6cabe31814d6c381e69491931a688836c16137ed" "0ae52e74c576120c6863403922ee00340a3bf3051615674c4b937f9c99b24535" default))))
+    ("0a1a7f64f8785ffbf5b5fbe8bca1ee1d9e1fb5e505ad9a0f184499fe6747c1af" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "0b6645497e51d80eda1d337d6cabe31814d6c381e69491931a688836c16137ed" "0ae52e74c576120c6863403922ee00340a3bf3051615674c4b937f9c99b24535" default)))
+ '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
