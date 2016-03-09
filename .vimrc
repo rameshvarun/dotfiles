@@ -83,8 +83,10 @@ set ruler " Column / line number.
 set wildmenu " Enhanced comand-line completion.
 set autoread " Automatically read changed files in.
 set hidden " Allow hidden buffers.
-
 set incsearch " Incremental search.
+
+set breakindent " On word wrap, match the indent of the previous line.
+set showbreak=\ \ \ \  " Wrapped lines are indented a little bit more.
 
 " If possible, leave a line above and below the cursor when scrolling.
 if !&scrolloff
