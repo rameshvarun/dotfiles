@@ -27,6 +27,8 @@ Plug 'scrooloose/syntastic' " Syntax checking.
 Plug 'tpope/vim-surround' " Manipulate surrounding characters.
 Plug 'tommcdo/vim-exchange' " Quickly exhange two regions of text.
 
+Plug 'chilicuil/vim-sprunge', { 'on': 'Sprunge' } " Sprunge pastebin
+
 " View tags in current file with tree-like interface. 
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 
