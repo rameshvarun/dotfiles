@@ -153,6 +153,8 @@ if has('nvim')
   else
     command Shell terminal
   end
+
+  :tnoremap <Esc> <C-\><C-n> " Map Esc to exit terminal mode.
 else
   " For regular vim, we use VimShell
   command Shell VimShell
