@@ -20,14 +20,15 @@ Plug 'gcmt/taboo.vim'
 " Custom start screen.
 Plug 'mhinz/vim-startify'
 
-Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
+Plug 'bling/vim-airline' " Status line.
+Plug 'scrooloose/nerdtree' " Better file tree.
+Plug 'scrooloose/nerdcommenter' " Manipulate comments.
+Plug 'scrooloose/syntastic' " Syntax checking.
+Plug 'tpope/vim-surround' " Manipulate surrounding characters.
+Plug 'tommcdo/vim-exchange' " Quickly exhange two regions of text.
 
+" View tags in current file with tree-like interface. 
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
-
-Plug 'tpope/vim-surround'
 
 " Language-specific plugins.
 Plug 'kchmck/vim-coffee-script' " Coffeescript
@@ -41,10 +42,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb', { 'on': 'Gbrowse' }
 
-
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'Valloric/YouCompleteMe'
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file and buffer search.
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Focus mode.
+Plug 'Valloric/YouCompleteMe' " Autocompletion.
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -142,13 +142,16 @@ nmap <silent> <S-Right> :wincmd l<CR>
 
 " Setup :Shell command
 if has('nvim')
- if executable('fish')
-  command Shell terminal fish
- elseif executable('zsh')
-  command Shell terminal zsh
- else
-  command Shell terminal
- end
+  " If this is neovim, we can use an actual shell. Prefer fish, then zsh, then
+  " the system default.
+  if executable('fish')
+    command Shell terminal fish
+  elseif executable('zsh')
+    command Shell terminal zsh
+  else
+    command Shell terminal
+  end
 else
- command Shell VimShell
+  " For regular vim, we use VimShell
+  command Shell VimShell
 end
