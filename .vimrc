@@ -27,6 +27,9 @@ Plug 'scrooloose/syntastic' " Syntax checking.
 Plug 'tpope/vim-surround' " Manipulate surrounding characters.
 Plug 'tommcdo/vim-exchange' " Quickly exhange two regions of text.
 
+Plug 'haya14busa/incsearch.vim' " Highlight all matches during incremental search.
+Plug 'haya14busa/incsearch-fuzzy.vim' " Fuzzy incremental search.
+
 Plug 'chilicuil/vim-sprunge', { 'on': 'Sprunge' } " Sprunge pastebin
 
 " View tags in current file with tree-like interface. 
@@ -84,6 +87,16 @@ set wildmenu " Enhanced comand-line completion.
 set autoread " Automatically read changed files in.
 set hidden " Allow hidden buffers.
 set incsearch " Incremental search.
+
+" Use incsearch.vim
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" Fuzzy incremental search
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 
 set breakindent " On word wrap, match the indent of the previous line.
 set showbreak=\ \ \ \  " Wrapped lines are indented a little bit more.
