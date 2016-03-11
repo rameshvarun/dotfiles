@@ -17,6 +17,9 @@ Plug 'a.vim', { 'on': 'A' }
 " Add custom names to tabs.
 Plug 'gcmt/taboo.vim'
 
+" Buffer explorer, just like emacs buffer-menu
+Plug 'jlanzarotta/bufexplorer'
+
 " Custom start screen.
 Plug 'mhinz/vim-startify'
 
@@ -64,6 +67,9 @@ Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 filetype plugin indent on
+
+" Use F2 to open the buffer menu
+map <F2> :BufExplorer<CR>
 
 " Arrows in NERDTree sometimes display incorrectly.
 let g:NERDTreeDirArrows=0
