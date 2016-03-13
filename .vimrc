@@ -20,6 +20,8 @@ Plug 'gcmt/taboo.vim'
 Plug 'jlanzarotta/bufexplorer' " Buffer explorer, just like emacs buffer-menu
 Plug 'troydm/easybuffer.vim' " Fast buffer switching.
 
+Plug 'terryma/vim-expand-region' " Increasing select larger regions.
+
 " Custom start screen.
 Plug 'mhinz/vim-startify'
 

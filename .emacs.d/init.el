@@ -15,7 +15,7 @@
 
 ;; Set the default shell (prefer zsh, since emacs doesn't seem to be able to deal with
 ;; ansi title bar sequences from fish).
-(aif (executable-find "zsh")
+(aif (executable-find "fish")
   (setenv "ESHELL" it))
 
 ;; List installed packages
@@ -34,7 +34,10 @@
 ;; Autocomplete.
 (use-package auto-complete
   :ensure t
-  :config (global-auto-complete-mode t))
+  :config (progn
+	    (ac-config-default)
+	    (global-auto-complete-mode t)
+	    (setq ac-show-menu-immediately-on-auto-complete t)))
 
 ;; Vim emulation layer. Disabled by default.
 (use-package evil
@@ -58,7 +61,8 @@
 (use-package haskell-mode :ensure t) ;; Haskell
 (use-package markdown-mode :ensure t) ;; Markdown
 (use-package lua-mode :ensure t) ;; Lua
-(use-package go-mode :ensure t) ;; Golang.
+(use-package go-mode :ensure t) ;; Golang
+(use-package tex-site :ensure auctex) ;; Latex
 
 ;; The famous org-mode
 (use-package org :ensure t)
