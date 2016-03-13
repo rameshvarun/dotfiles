@@ -17,8 +17,8 @@ Plug 'a.vim', { 'on': 'A' }
 " Add custom names to tabs.
 Plug 'gcmt/taboo.vim'
 
-" Buffer explorer, just like emacs buffer-menu
-Plug 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer' " Buffer explorer, just like emacs buffer-menu
+Plug 'troydm/easybuffer.vim' " Fast buffer switching.
 
 " Custom start screen.
 Plug 'mhinz/vim-startify'
@@ -29,6 +29,7 @@ Plug 'scrooloose/nerdcommenter' " Manipulate comments.
 Plug 'scrooloose/syntastic' " Syntax checking.
 Plug 'tpope/vim-surround' " Manipulate surrounding characters.
 Plug 'tommcdo/vim-exchange' " Quickly exhange two regions of text.
+Plug 'tpope/vim-endwise' " Automatic 'end' insertion for Ruby / Lua
 
 Plug 'haya14busa/incsearch.vim' " Highlight all matches during incremental search.
 Plug 'haya14busa/incsearch-fuzzy.vim' " Fuzzy incremental search.
