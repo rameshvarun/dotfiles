@@ -23,8 +23,8 @@
 (require 'use-package)
 
 ;; Magit requires at least emacs version 24.4
-(unless (version< emacs-version "24.4")
-  (use-package magit :ensure t))
+(use-package magit
+  :ensure t)
 
 ;; Monokai color scheme.
 (use-package monokai-theme
