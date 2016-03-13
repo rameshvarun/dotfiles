@@ -22,6 +22,8 @@ Plug 'troydm/easybuffer.vim' " Fast buffer switching.
 
 Plug 'terryma/vim-expand-region' " Increasing select larger regions.
 
+Plug 'easymotion/vim-easymotion' " Easymotion.
+
 " Custom start screen.
 Plug 'mhinz/vim-startify'
 
