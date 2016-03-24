@@ -11,6 +11,11 @@
   (menu-bar-mode 0)
   (toggle-frame-fullscreen))
 
+;; On mac, start wihtout tool-bar, and maximized.
+(when (string-equal window-system "mac")
+  (tool-bar-mode 0)
+  (toggle-frame-maximized))
+
 (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
       (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
