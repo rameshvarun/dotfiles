@@ -1,9 +1,20 @@
 (require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+
+;; Windows Emacs may not be able to make https:// connections.
+(if (string-equal system-type "windows-nt")
+    (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")))
+
+;; On windows, start without tool-bar or menu-bar, and start in fullscreen.
+(when (string-equal window-system "w32")
+  (tool-bar-mode 0)
+  (menu-bar-mode 0)
+  (toggle-frame-fullscreen))
+
 (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
       (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
 (package-initialize)
 
 ;; Enable xterm mouse mode.
