@@ -11,6 +11,10 @@
 
 (package-initialize)
 
+;; Update to the latest list of packages. 
+(unless package-archive-contents
+  (package-refresh-contents))
+
 ;; On Windows, start without tool-bar or menu-bar, and start in fullscreen.
 (when (string-equal window-system "w32")
   (tool-bar-mode 0)
@@ -41,6 +45,10 @@
 ;; Magit provides a pretty cool interface for using Git within Emacs.
 (use-package magit :ensure t
   :config (global-set-key (kbd "C-x g") 'magit-status))
+
+;; Flycheck provides syntax checking.
+(use-package flycheck :ensure t
+  :config (global-flycheck-mode))
 
 ;; Powerline
 (use-package powerline :ensure t
