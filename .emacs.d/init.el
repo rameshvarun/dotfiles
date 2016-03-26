@@ -5,17 +5,17 @@
     (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
     (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")))
 
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
+(package-initialize)
+
 ;; On windows, start without tool-bar or menu-bar, and start in fullscreen.
 (when (string-equal window-system "w32")
   (tool-bar-mode 0)
   (menu-bar-mode 0)
   (toggle-frame-fullscreen))
-
-(when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-      (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-
-(package-initialize)
 
 ;; Enable xterm mouse mode.
 (xterm-mouse-mode)
@@ -33,42 +33,43 @@
 (push "~/.emacs.d/use-package" load-path)
 (require 'use-package)
 
-;; Magit requires at least emacs version 24.4
-(use-package magit
-  :ensure t)
+;; Magit provides a pretty cool interface for using Git within Emacs.
+(use-package magit :ensure t
+  :config (global-set-key (kbd "C-x g") 'magit-status))
+
+;; Powerline
+(use-package powerline :ensure t
+  :config (powerline-default-theme))
+
+;; Projectile
+(use-package projectile :ensure t
+  :config (projectile-global-mode))
 
 ;; Monokai color scheme.
-(use-package monokai-theme
-  :ensure t
+(use-package monokai-theme :ensure t
   :config (load-theme 'monokai t))
 
 ;; Autocomplete.
-(use-package auto-complete
-  :ensure t
-  :config (progn
-	    (ac-config-default)
-	    (global-auto-complete-mode t)
-	    (setq ac-show-menu-immediately-on-auto-complete t)))
+(use-package auto-complete :ensure t
+  :config (progn (ac-config-default)
+		 (global-auto-complete-mode t)
+		 (setq ac-show-menu-immediately-on-auto-complete t)))
 
 ;; Vim emulation layer. Disabled by default.
-(use-package evil
-  :ensure t)
+(use-package evil :ensure t)
 
 ;; Ace-jump-mode
-(use-package ace-jump-mode
-  :ensure t
+(use-package ace-jump-mode :ensure t
   :config (define-key global-map (kbd "C-c SPC") 'ace-jump-mode))
 
 ;; Helm package.
-(use-package helm
-  :ensure t
-  :config (progn
-	    (helm-mode 1)
-	    (global-set-key (kbd "M-x") 'helm-M-x) ;; Use helm-M-x
-	    (global-set-key (kbd "C-x C-f") 'helm-find-files) ;; Use helm-find-files
-	    ))
+(use-package helm :ensure t
+  :config (progn (helm-mode 1)
+		 (global-set-key (kbd "M-x") 'helm-M-x) ;; Use helm-M-x
+		 (global-set-key (kbd "C-x C-f") 'helm-find-files))) ;; Use helm-find-files
 
-;; Modes for various languages.
+;; Major modes for various languages.
+(use-package json-mode :ensure t) ;; JSON
 (use-package haskell-mode :ensure t) ;; Haskell
 (use-package markdown-mode :ensure t) ;; Markdown
 (use-package lua-mode :ensure t) ;; Lua
@@ -78,7 +79,7 @@
 ;; The famous org-mode
 (use-package org :ensure t)
 
-;; Floobits collaboration.
+;; Floobits collaboration plugin.
 (use-package floobits :ensure t)
 
 ;; C-x C-b invokes buffer-menu instead of list-buffers
@@ -90,6 +91,7 @@
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
+;; Put backup fies in "~/.saves", rather than in the same folder as file.
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
