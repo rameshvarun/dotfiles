@@ -19,15 +19,17 @@
 (when (string-equal window-system "w32")
   (tool-bar-mode 0)
   (menu-bar-mode 0)
+  (scroll-bar-mode 0)
   (toggle-frame-fullscreen))
 
 ;; On Mac, start wihtout tool-bar, and maximized.
 (when (string-equal window-system "mac")
   (tool-bar-mode 0)
+  (scroll-bar-mode 0)
   (toggle-frame-maximized))
 
-;; Enable xterm mouse mode.
-(xterm-mouse-mode)
+(xterm-mouse-mode t) ;; Enable xterm mouse mode.
+(global-linum-mode t) ;; Show line numbers.
 
 ;; Use anaphoric macros, because they're cool.
 (push "~/.emacs.d/anaphora" load-path)
