@@ -11,11 +11,16 @@
 
 (package-initialize)
 
-;; On windows, start without tool-bar or menu-bar, and start in fullscreen.
+;; On Windows, start without tool-bar or menu-bar, and start in fullscreen.
 (when (string-equal window-system "w32")
   (tool-bar-mode 0)
   (menu-bar-mode 0)
   (toggle-frame-fullscreen))
+
+;; On Mac, start wihtout tool-bar, and maximized.
+(when (string-equal window-system "mac")
+  (tool-bar-mode 0)
+  (toggle-frame-maximized))
 
 ;; Enable xterm mouse mode.
 (xterm-mouse-mode)
