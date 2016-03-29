@@ -31,6 +31,11 @@
 (xterm-mouse-mode t) ;; Enable xterm mouse mode.
 (global-linum-mode t) ;; Show line numbers.
 
+;; No line numbers in any of these modes.
+(add-hook 'shell-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'eshell-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'term-mode-hook (lambda () (linum-mode -1)))
+
 ;; Use anaphoric macros, because they're cool.
 (push "~/.emacs.d/anaphora" load-path)
 (require 'anaphora)
