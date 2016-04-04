@@ -162,6 +162,9 @@ inoremap <C-Up> <Esc>:m .-2<CR>==gi
 vnoremap <C-Down> :m '>+1<CR>gv=gv
 vnoremap <C-Up> :m '<-2<CR>gv=gv
 
+" In gvim / macvim, don't show a scrollbar
+set guioptions-=r
+
 " Use Shit-Arrow to move around windows
 nmap <silent> <S-Up> :wincmd k<CR>
 nmap <silent> <S-Down> :wincmd j<CR>

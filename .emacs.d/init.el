@@ -24,9 +24,11 @@
 
 ;; On Mac, start wihtout tool-bar, and maximized.
 (when (string-equal window-system "mac")
+  (set-face-attribute 'default nil :family "Menlo")
   (tool-bar-mode 0)
   (scroll-bar-mode 0)
   (toggle-frame-maximized))
+  
 
 (xterm-mouse-mode t) ;; Enable xterm mouse mode.
 (global-linum-mode t) ;; Show line numbers.
