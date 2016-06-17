@@ -11,6 +11,9 @@ Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'rking/ag.vim', { 'on': 'Ag'  }
 
+" Fast fuzzy file searcher.
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 " Switch between .c and .h rapidly.
 Plug 'a.vim', { 'on': 'A' }
 
@@ -188,3 +191,6 @@ else
   " For regular vim, we use VimShell
   command Shell VimShell
 end
+
+" Open BUCK files as python scripts.
+au BufRead,BufNewFile BUCK setfiletype python
