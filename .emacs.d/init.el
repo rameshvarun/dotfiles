@@ -28,7 +28,11 @@
   (tool-bar-mode 0)
   (scroll-bar-mode 0)
   (toggle-frame-maximized))
-  
+
+(when (string-equal window-system "ns")
+  (tool-bar-mode 0)
+  (scroll-bar-mode 0)
+  (toggle-frame-maximized))
 
 (xterm-mouse-mode t) ;; Enable xterm mouse mode.
 (global-linum-mode t) ;; Show line numbers.
@@ -54,6 +58,11 @@
 ;; Magit provides a pretty cool interface for using Git within Emacs.
 (use-package magit :ensure t
   :config (global-set-key (kbd "C-x g") 'magit-status))
+
+;; SLIME for Common Lisp development.
+(use-package slime :ensure t
+  :config (progn (setq inferior-lisp-program (executable-find "sbcl"))
+		 (setq slime-contribs '(slime-fancy))))
 
 ;; Flycheck provides syntax checking.
 (use-package flycheck :ensure t
