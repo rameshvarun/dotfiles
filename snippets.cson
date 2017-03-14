@@ -1,0 +1,53 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.text.html':
+  'Include jQuery':
+    'prefix': 'jquery-include'
+    'body': '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>'
+  'Include Bootstrap':
+    'prefix': 'bootstrap-include'
+    'body': '''
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      '''
+
+'.source.python':
+  'Embed PtPython REPL':
+    'prefix': 'repl-ptpython'
+    'body': 'from ptpython.repl import embed; embed(globals(), locals())'
+  'PDB Breakpoint':
+    'prefix': 'breakpoint-pdb'
+    'body': 'import pdb; pdb.set_trace()'
+
+'.source.lua':
+  'Middleclass Class':
+    'prefix': 'middleclass-template'
+    'body': '''
+local $1 = class("$1")
+
+function $1:initialize($2)
+    $3
+end
+
+return $1
+    '''
