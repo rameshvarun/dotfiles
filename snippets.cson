@@ -1,53 +1,146 @@
-# Your snippets
-#
-# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
-# expand the prefix into a larger code block with templated values.
-#
-# You can create a new snippet in this file by typing "snip" and then hitting
-# tab.
-#
-# An example CoffeeScript snippet to expand log to console.log:
-#
-# '.source.coffee':
-#   'Console log':
-#     'prefix': 'log'
-#     'body': 'console.log $1'
-#
-# Each scope (e.g. '.source.coffee' above) can only be declared once.
-#
-# This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it in the
-# Atom Flight Manual:
-# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
-
-'.text.html':
-  'Include jQuery':
-    'prefix': 'jquery-include'
-    'body': '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>'
-  'Include Bootstrap':
-    'prefix': 'bootstrap-include'
-    'body': '''
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      '''
-
-'.source.python':
-  'Embed PtPython REPL':
-    'prefix': 'repl-ptpython'
-    'body': 'from ptpython.repl import embed; embed(globals(), locals())'
-  'PDB Breakpoint':
-    'prefix': 'breakpoint-pdb'
-    'body': 'import pdb; pdb.set_trace()'
-
-'.source.lua':
-  'Middleclass Class':
-    'prefix': 'middleclass-template'
-    'body': '''
-local $1 = class("$1")
-
-function $1:initialize($2)
-    $3
-end
-
-return $1
-    '''
+".text.html":
+	"Include jQuery":
+		prefix: "jquery-include"
+		body: "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>"
+	"Include Bootstrap":
+		prefix: "bootstrap-include"
+		body: '''
+			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		'''
+	"Angular Template":
+		prefix: "angular-template"
+		body: '''
+			<!doctype html>
+			<html ng-app>
+			  <head>
+			    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+			    <title>$1</title>
+			  </head>
+			  <body>
+			    $2
+			  </body>
+			</html>
+		'''
+	"Bootstrap Row":
+		prefix: "row"
+		body: "<div class=\"row\">$1</div>"
+	"Bootstrap Template":
+		prefix: "bootstrap-template"
+		body: '''
+			<!DOCTYPE html>
+			<html lang="en">
+			  <head>
+			    <meta charset="utf-8">
+			    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+			    <meta name="viewport" content="width=device-width, initial-scale=1">
+			    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+			    <title>$1</title>
+			
+			    <!-- Bootstrap -->
+			    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			
+			    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+			    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+			    <!--[if lt IE 9]>
+			      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			    <![endif]-->
+			  </head>
+			  <body>
+			
+			    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			    <!-- Include all compiled plugins (below), or include individual files as needed -->
+			    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			  </body>
+			</html>
+		'''
+	"Stylesheet Link":
+		prefix: "link"
+		body: "<link href=\"$1\" rel=\"stylesheet\">"
+	"Include Font Awesome":
+		prefix: "fontawesome-include"
+		body: "<link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\" integrity=\"sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN\" crossorigin=\"anonymous\">"
+	"External Script":
+		prefix: "script-external"
+		body: "<script src=\"$1\"></script>"
+".source.python":
+	"Embed PtPython REPL":
+		prefix: "repl-ptpython"
+		body: "from ptpython.repl import embed; embed(globals(), locals())"
+	"PDB Breakpoint":
+		prefix: "breakpoint-pdb"
+		body: "import pdb; pdb.set_trace()"
+	"Flask Template":
+		prefix: "Flask Template"
+		body: '''
+			from flask import Flask
+			app = Flask(__name__)
+			
+			@app.route("/")
+			def index():
+			    return "Hello World"
+			
+			if __name__ == "__main__":
+			    app.run()
+		'''
+	MkDirp:
+		prefix: "mkdirp"
+		body: '''
+			import os
+			import errno
+			
+			def mkdirp(dirname):
+			    try: os.mkdir(dirname)
+			    except OSError as exc:
+			        if exc.errno == errno.EEXIST and os.path.isdir(dirname): pass
+			        else: raise exc
+		'''
+	"Random ID":
+		prefix: "randomid"
+		body: '''
+			import string, random
+			def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+			     return ''.join(random.choice(chars) for _ in range(size))
+		'''
+	"Python Shebang":
+		prefix: "shebang"
+		body: "#!/usr/bin/env python"
+".source.lua":
+	"Middleclass Class":
+		prefix: "middleclass-template"
+		body: '''
+			local $1 = class("$1")
+			
+			function $1:initialize($2)
+			    $3
+			end
+			
+			return $1
+		'''
+	"Lua Shebang":
+		prefix: "shebang"
+		body: "#!/usr/bin/env lua"
+".source.js":
+	"Express Template":
+		prefix: "express-template"
+		body: '''
+			var express = require('express')
+			var app = express()
+			
+			app.get('/', function (req, res) {
+			  res.send('Hello World!')
+			})
+			
+			app.listen(3000, function () {
+			  console.log('Example app listening on port 3000!')
+			})
+		'''
+	"Node Shebang":
+		prefix: "shebang"
+		body: "#!/usr/bin/env node"
+".source.shell":
+	"Bash Shebang":
+		prefix: "shebang"
+		body: "#!/usr/bin/env bash"
