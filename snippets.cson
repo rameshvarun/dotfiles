@@ -65,6 +65,56 @@
 	"External Script":
 		prefix: "script-external"
 		body: "<script src=\"$1\"></script>"
+	"Bootstrap Container":
+		prefix: "container"
+		body: '''
+			<div class="container">
+			  $1
+			</div>
+		'''
+	"Bootstrap Fluid Container":
+		prefix: "container-fluid"
+		body: '''
+			<div class="container-fluid">
+			  $1
+			</div>
+		'''
+	"Bootstrap Row 4-4-4":
+		prefix: "row-4-4-4"
+		body: '''
+			<div class="row">
+			  <div class="col-md-4">$1</div>
+			  <div class="col-md-4">$2</div>
+			  <div class="col-md-4">$3</div>
+			</div>
+		'''
+	"Bootstrap Well":
+		prefix: "well"
+		body: "<div class=\"well\">$1</div>"
+	"Bootstrap Row 8-4":
+		prefix: "row-8-4"
+		body: '''
+			<div class="row">
+			  <div class="col-md-8">$1</div>
+			  <div class="col-md-4">$2</div>
+			</div>
+		'''
+	"Bootstrap Row 4-8":
+		prefix: "row-4-8"
+		body: '''
+			<div class="row">
+			  <div class="col-md-4">$1</div>
+			  <div class="col-md-8">$2</div>
+			</div>
+		'''
+	"Bootstrap Row 6-6":
+		prefix: "row-6-6"
+		body: '''
+			<div class="row">
+			  <div class="col-md-6">$1</div>
+			  <div class="col-md-6">$2</div>
+			</div>
+		'''
 ".source.python":
 	"Embed PtPython REPL":
 		prefix: "repl-ptpython"
@@ -107,6 +157,15 @@
 	"Python Shebang":
 		prefix: "shebang"
 		body: "#!/usr/bin/env python"
+	Mean:
+		prefix: "mean"
+		body: '''
+			def mean(iterable):
+			    total, count = 0.0, 0
+			    for item in iterable:
+			        total += item; count += 1
+			    return total / count
+		'''
 ".source.lua":
 	"Middleclass Class":
 		prefix: "middleclass-template"
@@ -140,7 +199,26 @@
 	"Node Shebang":
 		prefix: "shebang"
 		body: "#!/usr/bin/env node"
+	"Flow Tag":
+		prefix: "flow-tag"
+		body: "// @flow"
 ".source.shell":
 	"Bash Shebang":
 		prefix: "shebang"
 		body: "#!/usr/bin/env bash"
+".source.go":
+	"Handle Error":
+		prefix: "handle-error"
+		body: '''
+			if err := $1; err != nil {
+			  ${2:return err}
+			}
+		'''
+	"Handle Error With Result":
+		prefix: "handle-error-result"
+		body: '''
+			result, err := $1
+			if err != nil {
+			  ${2:return err}
+			}
+		'''
