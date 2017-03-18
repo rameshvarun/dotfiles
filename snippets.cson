@@ -48,6 +48,7 @@
 			    <![endif]-->
 			  </head>
 			  <body>
+			    $2
 			
 			    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -147,6 +148,7 @@
 			        if exc.errno == errno.EEXIST and os.path.isdir(dirname): pass
 			        else: raise exc
 		'''
+		description: "This function creates a directory if it does not already exist."
 	"Random ID":
 		prefix: "randomid"
 		body: '''
@@ -166,6 +168,7 @@
 			        total += item; count += 1
 			    return total / count
 		'''
+		description: "Calculate the mean of an iterable."
 ".source.lua":
 	"Middleclass Class":
 		prefix: "middleclass-template"
@@ -196,12 +199,21 @@
 			  console.log('Example app listening on port 3000!')
 			})
 		'''
+		description: "A template for a simple express.js web app."
 	"Node Shebang":
 		prefix: "shebang"
 		body: "#!/usr/bin/env node"
 	"Flow Tag":
 		prefix: "flow-tag"
 		body: "// @flow"
+		description: "Add to the top of a javascript file to indicate that it should be type checked by flow."
+	"Export Default Class":
+		prefix: "exp-def-class"
+		body: '''
+			export default class $1 {
+			  $2
+			}
+		'''
 ".source.shell":
 	"Bash Shebang":
 		prefix: "shebang"
