@@ -4,7 +4,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " A shell that can run in vim. (Neovim has :terminal).
-Plug 'Shougo/vimproc'
+Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Shougo/vimshell.vim', { 'on': 'VimShell' }
 
 " Fast find in project.
@@ -12,15 +12,15 @@ Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'rking/ag.vim', { 'on': 'Ag'  }
 
 " Fast fuzzy file searcher.
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'on': 'FZF',  'dir': '~/.fzf', 'do': './install --all' }
 
 " Switch between .c and .h rapidly.
 Plug 'a.vim', { 'on': 'A' }
 
 " Add custom names to tabs.
-Plug 'gcmt/taboo.vim'
+Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
 
-Plug 'jlanzarotta/bufexplorer' " Buffer explorer, just like emacs buffer-menu
+Plug 'jlanzarotta/bufexplorer', { 'on': 'BufExplorer' } " Buffer explorer, just like emacs buffer-menu
 Plug 'troydm/easybuffer.vim' " Fast buffer switching.
 
 Plug 'terryma/vim-expand-region' " Increasing select larger regions.
@@ -31,7 +31,7 @@ Plug 'easymotion/vim-easymotion' " Easymotion.
 Plug 'mhinz/vim-startify'
 
 Plug 'bling/vim-airline' " Status line.
-Plug 'scrooloose/nerdtree' " Better file tree.
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTree' } " Better file tree.
 Plug 'scrooloose/nerdcommenter' " Manipulate comments.
 Plug 'scrooloose/syntastic' " Syntax checking.
 Plug 'tpope/vim-surround' " Manipulate surrounding characters.
@@ -55,12 +55,12 @@ Plug 'lervag/vimtex'            " Latex
 
 " Git and GitHub utilities.
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
 Plug 'tpope/vim-rhubarb', { 'on': 'Gbrowse' }
 
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file and buffer search.
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Focus mode.
-Plug 'Valloric/YouCompleteMe' " Autocompletion.
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " Autocompletion.
 
 " Snippets
 Plug 'SirVer/ultisnips'
