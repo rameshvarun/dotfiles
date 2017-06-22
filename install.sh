@@ -24,3 +24,6 @@ ln -s $PWD/.mjolnir ~/.mjolnir
 
 # Aliases
 ln -s $PWD/.aliases ~/.aliases
+
+# Atom snippets
+ln -s $PWD/snippets.cson ~/.atom/snippets.cson
