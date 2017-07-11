@@ -49,3 +49,6 @@
 [submodule ".emacs.d/anaphora"]
 	path = .emacs.d/anaphora
 	url = https://github.com/rolandwalker/anaphora.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug
