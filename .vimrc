@@ -1,6 +1,7 @@
 set nocompatible
 
 " Plugins
+source ~/.vim/vim-plug/plug.vim
 call plug#begin('~/.vim/plugged')
 
 " A shell that can run in vim. (Neovim has :terminal).
@@ -15,7 +16,7 @@ Plug 'rking/ag.vim', { 'on': 'Ag'  }
 Plug 'junegunn/fzf', { 'on': 'FZF',  'dir': '~/.fzf', 'do': './install --all' }
 
 " Switch between .c and .h rapidly.
-Plug 'a.vim', { 'on': 'A' }
+Plug 'vim-scripts/a.vim', { 'on': 'A' }
 
 " Add custom names to tabs.
 Plug 'gcmt/taboo.vim', { 'on': 'TabooRename' }
@@ -176,11 +177,9 @@ nmap <silent> <S-Right> :wincmd l<CR>
 
 " Setup :Shell command
 if has('nvim')
-  " If this is neovim, we can use an actual shell. Prefer fish, then zsh, then
+  " If this is neovim, we can use an actual shell. Prefer zsh, then
   " the system default.
-  if executable('fish')
-    command Shell terminal fish
-  elseif executable('zsh')
+  if executable('zsh')
     command Shell terminal zsh
   else
     command Shell terminal
