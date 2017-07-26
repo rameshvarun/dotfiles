@@ -25,3 +25,13 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# Line navigation bindings
+bindkey -e
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+
+# Edit the current command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
