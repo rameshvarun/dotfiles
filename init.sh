@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# Navigation Aliases
-alias ..="cd .." # Parent
-alias ~="cd ~" # Home directory
-
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
    colorflag="--color"
@@ -17,29 +13,6 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 
 # Show colors in less command
 export LESS='-R'
-
-# Editors
-alias e=emacs
-alias v=vim
-alias s=subl
-alias a=atom
-
-# Git aliases
-alias g=git
-alias gs="git status"
-alias gc="git commit"
-alias gp="git pull"
-alias gd="git diff"
-alias ga="git add"
-
-# Mercurial aliases
-alias hs="hg status"
-alias hc="hg commit"
-alias hr="hg rebase"
-alias hsl="hg sl"
-alias hd="hg diff"
-
-alias jsonfmt="python -m json.tool"
 
 # Command to open the current directory in a folder viewer
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -64,3 +37,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	alias paste="pbpaste"
 fi
 
+# If Neovim is installed, alias vim and vi to nvim.
+if type "nvim" &> /dev/null; then
+  alias vi="nvim"
+  alias vim="nvim"
+fi

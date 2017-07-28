@@ -1,3 +1,6 @@
+# First load regular bash options.
+source ~/dotfiles/init.sh
+
 # History Options
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000
