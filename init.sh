@@ -41,4 +41,5 @@ fi
 if type "nvim" &> /dev/null; then
   alias vi="nvim"
   alias vim="nvim"
+  alias vimdiff="nvim -d"
 fi
