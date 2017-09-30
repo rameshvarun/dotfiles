@@ -17,6 +17,7 @@ zplug "plugins/git",   from:oh-my-zsh # Git integration
 zplug "zsh-users/zsh-syntax-highlighting", defer:2 # Syntax highlighting
 zplug "zsh-users/zsh-autosuggestions", defer:3 # Autosuggest on type (like fish shell)
 zplug 'dracula/zsh', as:theme # Dracula theme
+zplug "plugins/rbenv",   from:oh-my-zsh # rbenv plugin
 zplug "plugins/bundler",   from:oh-my-zsh # Automatically wrap common commands in bundler
 
 # Install plugins if there are plugins that have not been installed

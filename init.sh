@@ -42,4 +42,11 @@ if type "nvim" &> /dev/null; then
   alias vi="nvim"
   alias vim="nvim"
   alias vimdiff="nvim -d"
+
+  export VISUAL=nvim
 fi
+
+export EDITOR="$VISUAL"
+
+# Add dotfiles/bin
+export PATH="~/dotfiles/bin:$PATH"
