@@ -49,4 +49,4 @@ fi
 export EDITOR="$VISUAL"
 
 # Add dotfiles/bin
-export PATH="~/dotfiles/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
