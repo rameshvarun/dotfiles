@@ -16,7 +16,7 @@ git submodule update --init --recursive
 ## Tools
 
 ```bash
-brew install vim neovim emacs zsh fzf ag
+brew install vim neovim emacs zsh fzf ag tldr ffmpeg bat htop
 ```
 
 ## Sublime Text
