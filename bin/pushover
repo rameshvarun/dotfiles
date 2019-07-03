@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+import os
+import argparse
+import requests
+
+if __name__ == "__main__":
+    APP_TOKEN = os.environ["PUSHOVER_APP_TOKEN"]
+    USER_TOKEN = os.environ["PUSHOVER_USER_TOKEN"]
+
+    parser = argparse.ArgumentParser(description="Send a message using pushover..")
+    parser.add_argument("message", metavar="msg", type=str, help="The message to send.")
+    parser.add_argument("--title", type=str, help="An optional title for a message.")
+
+    args = parser.parse_args()
+
+    data = {"token": APP_TOKEN, "user": USER_TOKEN, "message": args.message}
+    if args.title:
+        data["title"] = args.title
+    requests.post("https://api.pushover.net/1/messages.json", data=data)
