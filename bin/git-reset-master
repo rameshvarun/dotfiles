@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+read -p "Are you sure? You could lose work on your local master. (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  git checkout origin/master
+  git branch -f master
+  git checkout master
+fi
