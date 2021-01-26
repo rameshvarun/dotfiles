@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+$@
+pushover --title "'$*' completed." "Status Code: $?"
