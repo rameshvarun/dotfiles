@@ -6,4 +6,5 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   git clean -fXd
+  git clean -fd
 fi
