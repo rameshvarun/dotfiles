@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import click
+import subprocess
+import os
+
+@click.command()
+@click.argument('audio', type=click.Path(exists=True))
+@click.argument('title', type=str)
+@click.argument('output', type=click.Path())
+def audio2video(audio, title, output):
+    os.system(f"""ffmpeg -f lavfi -i color=c=black:s=1280x720 -i {audio} -shortest -vf \
+        "drawtext=fontsize=40: \
+        fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2:text='{title}'" \
+        {output}""")
+
+if __name__ == '__main__':
+    audio2video()
