@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-git commit --amend
+git commit --amend --no-edit
