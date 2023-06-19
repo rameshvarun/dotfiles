@@ -71,7 +71,6 @@ Plug 'honza/vim-snippets'
 Plug 'sickill/vim-monokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
-Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
