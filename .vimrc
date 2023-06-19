@@ -73,10 +73,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
 Plug 'junegunn/seoul256.vim'
 
-if has('nvim')
-	Plug 'floobits/floobits-neovim'
-end
-
 call plug#end()
 
 filetype plugin indent on
