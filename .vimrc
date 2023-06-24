@@ -32,7 +32,7 @@ Plug 'easymotion/vim-easymotion' " Easymotion.
 Plug 'mhinz/vim-startify'
 
 Plug 'bling/vim-airline' " Status line.
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTree' } " Better file tree.
+Plug 'scrooloose/nerdtree' " Better file tree.
 Plug 'scrooloose/nerdcommenter' " Manipulate comments.
 Plug 'scrooloose/syntastic' " Syntax checking.
 Plug 'tpope/vim-surround' " Manipulate surrounding characters.
@@ -56,21 +56,14 @@ Plug 'lervag/vimtex'            " Latex
 
 " Git and GitHub utilities.
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb', { 'on': 'Gbrowse' }
 
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file and buffer search.
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Focus mode.
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " Autocompletion.
-
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 " Colorschemes
-Plug 'sickill/vim-monokai'
-Plug 'nanotech/jellybeans.vim'
-Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -92,7 +85,7 @@ let g:airline#extensions#taboo#enabled = 1
 " Syntax highlighting
 syntax enable
 set background=dark
-colorscheme molokai " Monokai theme.
+colorscheme gruvbox " Monokai theme.
 
 set laststatus=2 " Always have a stats bar.
 set number " Line numbers.
