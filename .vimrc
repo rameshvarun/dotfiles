@@ -1,7 +1,7 @@
 set nocompatible
 
 " Plugins
-source ~/.vim/vim-plug/plug.vim
+source ~/dotfiles/.vim/vim-plug/plug.vim
 call plug#begin('~/.vim/plugged')
 
 " A shell that can run in vim. (Neovim has :terminal).
