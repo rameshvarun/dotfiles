@@ -4,13 +4,11 @@
 ln -s $PWD/.inputrc ~/.inputrc
 
 # Vim files
-ln -s $PWD/.vim ~/.vim
-ln -s $PWD/.vimrc ~/.vimrc
+echo "source ~/dotfiles/.vimrc" >> ~/.config/.vimrc
 
 # Neovim files
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-ln -s ~/.vim $XDG_CONFIG_HOME/nvim
-ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+mkdir -p ~/.config/nvim
+echo "source ~/dotfiles/.vimrc" >> ~/.config/nvim/init.vim
 
 # Tmux files
 ln -s $PWD/.tmux ~/.tmux
