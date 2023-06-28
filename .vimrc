@@ -65,7 +65,15 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Focus mode.
 " Colorschemes
 Plug 'morhetz/gruvbox'
 
+if has('nvim')
+  Plug 'gelguy/wilder.nvim'
+endif
+
 call plug#end()
+
+if has('nvim')
+  call wilder#setup({'modes': [':', '/', '?']})
+endif
 
 filetype plugin indent on
 
@@ -94,6 +102,7 @@ set wildmenu " Enhanced comand-line completion.
 set autoread " Automatically read changed files in.
 set hidden " Allow hidden buffers.
 set incsearch " Incremental search.
+set ignorecase " Search / commands ignore case by default
 
 " Use incsearch.vim
 map /  <Plug>(incsearch-forward)
