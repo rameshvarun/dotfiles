@@ -14,35 +14,12 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 # Show colors in less command
 export LESS='-R'
 
-# Command to open the current directory in a folder viewer
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias o="nautilus ."
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	alias o="open ."
-elif [[ "$OSTYPE" == "msys" ]]; then
-	alias o="explorer ."
-fi
-
-# Command to pipe into the clipboard
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias clip="xclip -selection c"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	alias clip="pbcopy"
-fi
-
-# Command to print out the clipboard
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias paste="xclip -selection clipboard -o"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	alias paste="pbpaste"
-fi
-
 # If Neovim is installed, alias vim and vi to nvim.
 if type "nvim" &> /dev/null; then
   alias vi="nvim"
   alias vim="nvim"
   alias vimdiff="nvim -d"
-
+  
   export VISUAL=nvim
 fi
 
