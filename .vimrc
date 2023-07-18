@@ -42,8 +42,6 @@ Plug 'tpope/vim-endwise' " Automatic 'end' insertion for Ruby / Lua
 Plug 'haya14busa/incsearch.vim' " Highlight all matches during incremental search.
 Plug 'haya14busa/incsearch-fuzzy.vim' " Fuzzy incremental search.
 
-Plug 'chilicuil/vim-sprunge', { 'on': 'Sprunge' } " Sprunge pastebin
-
 " View tags in current file with tree-like interface. 
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 
