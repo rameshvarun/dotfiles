@@ -91,7 +91,8 @@ let g:airline#extensions#taboo#enabled = 1
 " Syntax highlighting
 syntax enable
 set background=dark
-colorscheme gruvbox " Monokai theme.
+colorscheme gruvbox
+set termguicolors
 
 set laststatus=2 " Always have a stats bar.
 set number " Line numbers.
