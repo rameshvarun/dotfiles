@@ -142,7 +142,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 set mouse=a
 
 " Dont clutter directories with backup and swap files
+call mkdir($HOME . "/.vim/backup", "p")
 set backupdir=~/.vim/backup
+
+call mkdir($HOME . "/.vim/swap", "p")
 set directory=~/.vim/swap
 
 " Delete swap files with :ClearSwap command.
