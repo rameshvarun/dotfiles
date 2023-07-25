@@ -78,8 +78,8 @@ filetype plugin indent on
 " Use F2 to open the buffer menu
 map <F2> :BufExplorer<CR>
 
-" Arrows in NERDTree sometimes display incorrectly.
-let g:NERDTreeDirArrows=0
+" NERDTree show hidden files by default.
+let g:NERDTreeShowHidden=1
 
 " Use airline's better tabline.
 let g:airline#extensions#tabline#enabled = 1
