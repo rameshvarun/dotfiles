@@ -11,7 +11,6 @@ mkdir -p ~/.config/nvim
 echo "source ~/dotfiles/.vimrc" >> ~/.config/nvim/init.vim
 
 # Tmux files
-ln -s $PWD/.tmux ~/.tmux
 ln -s $PWD/.tmux.conf ~/.tmux.conf
 
 # Emacs files
