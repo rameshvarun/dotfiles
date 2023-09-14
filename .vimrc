@@ -51,6 +51,7 @@ Plug 'fatih/vim-go'             " Golang
 Plug 'rust-lang/rust.vim'       " Rust
 Plug 'jrozner/vim-antlr'        " Antlr (grammar files)
 Plug 'lervag/vimtex'            " Latex
+Plug 'udalov/kotlin-vim'
 
 " Git and GitHub utilities.
 Plug 'airblade/vim-gitgutter'
