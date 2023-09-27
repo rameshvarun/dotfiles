@@ -27,3 +27,8 @@ export EDITOR="$VISUAL"
 
 # Add dotfiles/bin
 export PATH="$HOME/dotfiles/bin:$PATH"
+
+# Interactive CD using FZF.
+function fzcd {
+  cd ./$(find * -type d | fzf)
+}
