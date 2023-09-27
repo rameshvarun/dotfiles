@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import tempfile
+import urllib
+import urllib.request
+import tarfile
+import hashlib
+import subprocess
+
+from pathlib import Path
+
+URL = "https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz"
+SHA256SUM = "ff05cb8ebd0785ce220975e5cd394bc200424d9a58727fa81e0bbb3828db7ff1"
+
+def sha256sum(filename):
+    return hashlib.sha256(Path(filename).read_bytes()).hexdigest()
+
+def verify(filename, checksum):
+    if sha256sum(filename) != checksum:
+        raise Exception("File verification failed.")
+
+if __name__ == "__main__":
+    script_folder = os.path.realpath(os.path.dirname(__file__))
+    downloads_folder = os.path.join(script_folder, "downloads")
+    executable_file = os.path.join(downloads_folder, "lazygit")
+
+    if not os.path.exists(downloads_folder):
+        os.mkdir(downloads_folder)
+    
+    if not os.path.exists(executable_file):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tar_file = os.path.join(tmpdir, "lazygit.tar.gz")
+
+            urllib.request.urlretrieve(URL, tar_file)
+            verify(tar_file, SHA256SUM)
+            
+            tar = tarfile.open(tar_file, "r:gz")
+            tar.extractall(tmpdir)
+            tar.close()
+
+            os.rename(os.path.join(tmpdir, "lazygit"), executable_file)
+
+    subprocess.run([executable_file] + sys.argv[1:])
