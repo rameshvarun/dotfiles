@@ -4,4 +4,4 @@ import subprocess
 if __name__ == "__main__":
     sessions = subprocess.check_output("tmux list-sessions", shell=True, encoding="utf-8")
     session = subprocess.check_output("fzf --header 'Select a tmux session to attach to'", shell=True, input=sessions, encoding="utf-8").split(':')[0]
-    subprocess.check_output(f"tmux attach {session}", shell=True)
+    subprocess.check_output(f"tmux attach-session -t {session}", shell=True)
