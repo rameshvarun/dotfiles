@@ -6,6 +6,9 @@ ln -s $PWD/.inputrc ~/.inputrc
 # Vim files
 echo "source ~/dotfiles/.vimrc" >> ~/.config/.vimrc
 
+# Bash
+echo "source ~/dotfiles/init.sh" >> ~/.bashrc
+
 # Neovim files
 mkdir -p ~/.config/nvim
 echo "source ~/dotfiles/.vimrc" >> ~/.config/nvim/init.vim
