@@ -3,8 +3,7 @@ source ~/dotfiles/init.sh
 
 # History Options
 export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=50000
-export SAVEHIST=50000
+export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
