@@ -33,7 +33,7 @@ alias gp="git push"
 # Kubernetes command aliases
 alias kc="kubectl"
 alias kpods="kubectl get pods"
-alias kdeployments="kubectl get deployments"
+alias kdeploys="kubectl get deployments"
 alias ksecrets="kubectl get secrets"
 
 # Other aliases
