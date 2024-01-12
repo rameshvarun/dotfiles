@@ -42,3 +42,5 @@ alias py="python3"
 
 # Projects
 alias dotfiles="cd ~/dotfiles"
+alias projects="cd ~/projects"
+alias scratch="cd ~/scratch"
