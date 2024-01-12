@@ -22,3 +22,23 @@ function fzfcd {
 # Command history options
 export HISTSIZE=50000
 export HISTFILESIZE=50000
+
+# Git command aliases
+alias g="git"
+alias ga="git add"
+alias gc="git commit"
+alias gs="git status"
+alias gp="git push"
+
+# Kubernetes command aliases
+alias kc="kubectl"
+alias kpods="kubectl get pods"
+alias kdeployments="kubectl get deployments"
+alias ksecrets="kubectl get secrets"
+
+# Other aliases
+alias gr="grep"
+alias py="python3"
+
+# Projects
+alias dotfiles="cd ~/dotfiles"
