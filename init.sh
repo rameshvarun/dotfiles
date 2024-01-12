@@ -15,8 +15,13 @@ if type "nvim" &> /dev/null; then
 fi
 
 # Interactive CD using FZF.
-function fzfcd {
+function fzcd {
   cd ./$(find * -type d | fzf)
+}
+
+# Interactive find file and edit.
+function fzedit {
+ nvim $(fzf)
 }
 
 # Command history options
