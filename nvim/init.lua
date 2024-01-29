@@ -31,6 +31,12 @@ require("lazy").setup({
 	{'nvim-lualine/lualine.nvim'}
 })
 
+vim.opt.number = true
+vim.opt.ignorecase = true
+
+vim.api.nvim_create_user_command('FZF', require('telescope.builtin').find_files, {})
+vim.api.nvim_create_user_command('FZG', require('telescope.builtin').git_files, {})
+
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme tokyonight-night]]
 
