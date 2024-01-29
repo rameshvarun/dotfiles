@@ -10,8 +10,7 @@ echo "source ~/dotfiles/.vimrc" >> ~/.config/.vimrc
 echo "source ~/dotfiles/init.sh" >> ~/.bashrc
 
 # Neovim files
-mkdir -p ~/.config/nvim
-ln -s $PWD/nvim-init.lua ~/.config/nvim/init.lua
+ln -s $PWD/nvim/ ~/.config/nvim
 
 # Tmux files
 ln -s $PWD/.tmux.conf ~/.tmux.conf

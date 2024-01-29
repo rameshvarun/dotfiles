@@ -13,10 +13,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{"folke/tokyonight.nvim", tag="v3.0.1"},
-	{ "nvim-lua/plenary.nvim", tag="v0.1.4" },
-	{ "MunifTanjim/nui.nvim", tag="0.2.0" },
-	{"nvim-neo-tree/neo-tree.nvim", tag="3.16",
+	{"folke/tokyonight.nvim"},
+	{ "nvim-lua/plenary.nvim" },
+	{ "MunifTanjim/nui.nvim"},
+	{"nvim-neo-tree/neo-tree.nvim", branch = "v3.x",
 	config=function()
 		require("neo-tree").setup({
 			default_component_configs = {
@@ -27,8 +27,8 @@ require("lazy").setup({
 		})
 	end},
 	{'nvim-telescope/telescope.nvim', tag = '0.1.5'},
-	{'akinsho/bufferline.nvim', tag = 'v4.5.0'},
-	{'nvim-lualine/lualine.nvim', commit = '7d131a8d3ba5016229e8a1d08bf8782acea98852'}
+	{'akinsho/bufferline.nvim'},
+	{'nvim-lualine/lualine.nvim'}
 })
 
 vim.opt.termguicolors = true
