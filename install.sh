@@ -11,7 +11,7 @@ echo "source ~/dotfiles/init.sh" >> ~/.bashrc
 
 # Neovim files
 mkdir -p ~/.config/nvim
-echo "source ~/dotfiles/.vimrc" >> ~/.config/nvim/init.vim
+ln -s $PWD/nvim-init.lua ~/.config/nvim/init.lua
 
 # Tmux files
 ln -s $PWD/.tmux.conf ~/.tmux.conf
