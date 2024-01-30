@@ -22,6 +22,9 @@ require("lazy").setup({
 			default_component_configs = {
 				icon = {
 					enabled = false
+				},
+				git_status = {
+					symbols = false
 				}
 			}
 		})
@@ -43,7 +46,7 @@ vim.cmd[[colorscheme tokyonight-night]]
 require("bufferline").setup({
 	options={
 		show_buffer_icons=false,
-		show_buffer_close_icons = false,
+		buffer_close_icon='×',
 	}
 })
 
