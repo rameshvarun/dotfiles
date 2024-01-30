@@ -12,6 +12,9 @@ echo "source ~/dotfiles/init.sh" >> ~/.bashrc
 # Neovim files
 ln -s $PWD/nvim/ ~/.config/nvim
 
+# Zellij Configuration
+ln -s $PWD/zellij/ ~/.config/zellij
+
 # Tmux files
 ln -s $PWD/.tmux.conf ~/.tmux.conf
 
