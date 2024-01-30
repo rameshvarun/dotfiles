@@ -36,7 +36,7 @@ require("lazy").setup({
 
 vim.opt.number = true
 vim.opt.ignorecase = true
-vim.opt.clipboard = "unnamedplus"
+vim.cmd[[set clipboard^=unnamed,unnamedplus]]
 
 vim.api.nvim_create_user_command('FZF', require('telescope.builtin').find_files, {})
 vim.api.nvim_create_user_command('FZG', require('telescope.builtin').git_files, {})
