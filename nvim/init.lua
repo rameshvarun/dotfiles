@@ -40,6 +40,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.api.nvim_create_user_command('FZF', require('telescope.builtin').find_files, {})
 vim.api.nvim_create_user_command('FZG', require('telescope.builtin').git_files, {})
+vim.api.nvim_create_user_command('Rg', require('telescope.builtin').live_grep, {})
 
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme tokyonight-night]]
