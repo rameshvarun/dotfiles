@@ -64,15 +64,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Focus mode.
 " Colorschemes
 Plug 'morhetz/gruvbox'
 
-if has('nvim')
-  Plug 'gelguy/wilder.nvim'
-endif
-
 call plug#end()
-
-if has('nvim')
-  call wilder#setup({'modes': [':', '/', '?']})
-endif
 
 filetype plugin indent on
 
@@ -178,22 +170,6 @@ nmap <silent> <S-Up> :wincmd k<CR>
 nmap <silent> <S-Down> :wincmd j<CR>
 nmap <silent> <S-Left> :wincmd h<CR>
 nmap <silent> <S-Right> :wincmd l<CR>
-
-" Setup :Shell command
-if has('nvim')
-  " If this is neovim, we can use an actual shell. Prefer zsh, then
-  " the system default.
-  if executable('zsh')
-    command Shell terminal zsh
-  else
-    command Shell terminal
-  end
-
-  :tnoremap <Esc> <C-\><C-n> " Map Esc to exit terminal mode.
-else
-  " For regular vim, we use VimShell
-  command Shell VimShell
-end
 
 " Open BUCK files as python scripts.
 au BufRead,BufNewFile BUCK setfiletype python
