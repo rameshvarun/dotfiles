@@ -22,6 +22,14 @@ elif type "batcat" &> /dev/null; then
   alias bat="batcat"
 fi
 
+# Replace ls with eza
+if type "eza" &> /dev/null; then
+  alias ls="eza"
+  alias exa="eza"
+elif type "exa" &> /dev/null; then
+  alias ls="exa"
+fi
+
 # Interactive CD using FZF.
 function fzcd {
   cd ./$(find * -type d | fzf)
