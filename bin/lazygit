@@ -11,7 +11,7 @@ import subprocess
 import platform
 
 from pathlib import Path
-from utils import Download, get_download
+from utils import Download, get_download, ensure_brew_package
 
 DOWNLOADS = [
     Download(
@@ -36,26 +36,30 @@ def verify(filename, checksum):
         raise Exception("File verification failed.")
 
 if __name__ == "__main__":
-    script_folder = os.path.realpath(os.path.dirname(__file__))
-    downloads_folder = os.path.join(script_folder, "downloads")
-    executable_file = os.path.join(downloads_folder, "lazygit")
-    download = get_download(DOWNLOADS)
+    if platform.system() == "Darwin":
+        ensure_brew_package("lazygit")
+        subprocess.run(["/opt/homebrew/bin/lazygit"] + sys.argv[1:])
+    else:
+        script_folder = os.path.realpath(os.path.dirname(__file__))
+        downloads_folder = os.path.join(script_folder, "downloads")
+        executable_file = os.path.join(downloads_folder, "lazygit")
+        download = get_download(DOWNLOADS)
 
-    if not os.path.exists(downloads_folder):
-        os.mkdir(downloads_folder)
+        if not os.path.exists(downloads_folder):
+            os.mkdir(downloads_folder)
 
-    if not os.path.exists(executable_file):
-        print("Downloading lazygit...")
-        with tempfile.TemporaryDirectory() as tmpdir:
-            tar_file = os.path.join(tmpdir, "lazygit.tar.gz")
+        if not os.path.exists(executable_file):
+            print("Downloading lazygit...")
+            with tempfile.TemporaryDirectory() as tmpdir:
+                tar_file = os.path.join(tmpdir, "lazygit.tar.gz")
 
-            urllib.request.urlretrieve(download.url, tar_file)
-            verify(tar_file, download.sha256sum)
+                urllib.request.urlretrieve(download.url, tar_file)
+                verify(tar_file, download.sha256sum)
 
-            tar = tarfile.open(tar_file, "r:gz")
-            tar.extractall(tmpdir)
-            tar.close()
+                tar = tarfile.open(tar_file, "r:gz")
+                tar.extractall(tmpdir)
+                tar.close()
 
-            os.rename(os.path.join(tmpdir, "lazygit"), executable_file)
+                os.rename(os.path.join(tmpdir, "lazygit"), executable_file)
 
-    subprocess.run([executable_file] + sys.argv[1:])
+        subprocess.run([executable_file] + sys.argv[1:])
