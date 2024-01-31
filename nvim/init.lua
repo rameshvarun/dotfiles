@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{"folke/tokyonight.nvim"},
+	{"catppuccin/nvim"},
 	{ "nvim-lua/plenary.nvim" },
 	{ "MunifTanjim/nui.nvim"},
 	{"nvim-neo-tree/neo-tree.nvim", branch = "v3.x",
@@ -31,7 +32,7 @@ require("lazy").setup({
 	end},
 	{'nvim-telescope/telescope.nvim', tag = '0.1.5'},
 	{'akinsho/bufferline.nvim'},
-	{'nvim-lualine/lualine.nvim'}
+	{'nvim-lualine/lualine.nvim'},
 })
 
 vim.opt.number = true
@@ -43,7 +44,7 @@ vim.api.nvim_create_user_command('FZG', require('telescope.builtin').git_files, 
 vim.api.nvim_create_user_command('Rg', require('telescope.builtin').live_grep, {})
 
 vim.opt.termguicolors = true
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd[[colorscheme catppuccin-mocha]]
 
 require("bufferline").setup({
 	options={
