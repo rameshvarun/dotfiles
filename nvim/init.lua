@@ -43,6 +43,8 @@ vim.api.nvim_create_user_command('FZF', require('telescope.builtin').find_files,
 vim.api.nvim_create_user_command('FZG', require('telescope.builtin').git_files, {})
 vim.api.nvim_create_user_command('Rg', require('telescope.builtin').live_grep, {})
 
+vim.api.nvim_create_user_command('Tree', "Neotree toggle", {})
+
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme catppuccin-mocha]]
 
