@@ -15,6 +15,9 @@ ln -s $PWD/nvim/ ~/.config/nvim
 # Zellij Configuration
 ln -s $PWD/zellij/ ~/.config/zellij
 
+# Helix configuration
+ln -s $PWD/helix/ ~/.config/helix
+
 # Tmux files
 ln -s $PWD/.tmux.conf ~/.tmux.conf
 
