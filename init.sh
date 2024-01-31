@@ -14,6 +14,14 @@ if type "nvim" &> /dev/null; then
   export EDITOR="$VISUAL"
 fi
 
+# Replace cat with bat.
+if type "bat" &> /dev/null; then
+  alias cat="bat"
+elif type "batcat" &> /dev/null; then
+  alias cat="batcat"
+  alias bat="batcat"
+fi
+
 # Interactive CD using FZF.
 function fzcd {
   cd ./$(find * -type d | fzf)
