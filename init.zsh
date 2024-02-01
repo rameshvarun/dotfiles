@@ -37,3 +37,8 @@ bindkey '[D' backward-word
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
+
+# Use atuin if it is available
+if type "atuin" &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
