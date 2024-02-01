@@ -40,5 +40,5 @@ bindkey '\C-x\C-e' edit-command-line
 
 # Use atuin if it is available
 if type "atuin" &> /dev/null; then
-  eval "$(atuin init zsh)"
+  eval "$(atuin init zsh --disable-up-arrow)"
 fi
