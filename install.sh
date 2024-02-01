@@ -15,6 +15,9 @@ ln -s $PWD/nvim/ ~/.config/nvim
 # Zellij Configuration
 ln -s $PWD/zellij/ ~/.config/zellij
 
+# Atuin Configuration
+ln -s $PWD/atuin/ ~/.config/atuin
+
 # Helix configuration
 ln -s $PWD/helix/ ~/.config/helix
 
