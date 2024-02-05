@@ -65,4 +65,10 @@ require('lualine').setup({
 	}
 })
 
+require'cmp'.setup {
+  sources = {
+    { name = 'nvim_lsp' }
+  }
+}
+
 require'lspconfig'.pyright.setup{}
