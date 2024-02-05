@@ -33,6 +33,9 @@ require("lazy").setup({
 	{'nvim-telescope/telescope.nvim', tag = '0.1.5'},
 	{'akinsho/bufferline.nvim'},
 	{'nvim-lualine/lualine.nvim'},
+	{'neovim/nvim-lspconfig'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/nvim-cmp'}
 })
 
 vim.opt.number = true
@@ -61,3 +64,5 @@ require('lualine').setup({
 		section_separators = '', component_separators = ''
 	}
 })
+
+require'lspconfig'.pyright.setup{}
