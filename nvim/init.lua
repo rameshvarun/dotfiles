@@ -35,7 +35,8 @@ require("lazy").setup({
 	{'nvim-lualine/lualine.nvim'},
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/nvim-cmp'}
+	{'hrsh7th/nvim-cmp'},
+	{'lewis6991/gitsigns.nvim'}
 })
 
 vim.opt.number = true
@@ -47,9 +48,12 @@ vim.api.nvim_create_user_command('FZG', require('telescope.builtin').git_files, 
 vim.api.nvim_create_user_command('Rg', require('telescope.builtin').live_grep, {})
 
 vim.api.nvim_create_user_command('Tree', "Neotree toggle", {})
+vim.api.nvim_create_user_command('Blame', "Gitsigns blame_line", {})
 
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme catppuccin-mocha]]
+
+require('gitsigns').setup()
 
 require("bufferline").setup({
 	options={
