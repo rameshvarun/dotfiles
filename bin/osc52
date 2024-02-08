@@ -2,13 +2,34 @@
 import sys
 import base64
 import os
+import curses
 
-# Based off of code at https://github.com/aymanbagabas/go-osc52
+"""
+References:
+- https://github.com/aymanbagabas/go-osc52
+- https://github.com/theimpostor/osc
+- https://github.com/rumpelsepp/oscclip/
+"""
 
 if __name__ == "__main__":
-    data = sys.stdin.buffer.read()
-    encoded = base64.b64encode(data).decode("ascii")
+    if len(sys.argv) == 1:
+        command = "copy"
+    else:
+        command = sys.argv[1]
 
-    sys.stdout.write("\x1b]52;c;")
-    sys.stdout.write(encoded)
-    sys.stdout.write("\x07")
+    if command == "copy":
+        data = sys.stdin.buffer.read()
+        encoded = base64.b64encode(data).decode("ascii")
+
+        sys.stdout.write("\x1b]52;c;")
+        sys.stdout.write(encoded)
+        sys.stdout.write("\x07")
+    elif command == "clear":
+        # Doesn't work in all terminals.
+        sys.stdout.write("\x1b]52;c;")
+        sys.stdout.write("!")
+        sys.stdout.write("\x07")
+    elif command == "paste":
+        raise Exception("Paste not yet implemented.")
+    else:
+        raise Exception(f"Unknown command {command}.")
