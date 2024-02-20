@@ -24,6 +24,9 @@ ln -s $PWD/helix/ ~/.config/helix
 # Tmux files
 ln -s $PWD/.tmux.conf ~/.tmux.conf
 
+# Wezterm configuration
+ln -s $PWD/.wezterm.lua ~/.wezterm.lua
+
 # Emacs files
 ln -s $PWD/.emacs.d ~/.emacs.d
 
