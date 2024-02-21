@@ -16,9 +16,9 @@ fi
 
 # Replace cat with bat.
 if type "bat" &> /dev/null; then
-  alias cat="bat"
+  alias cat="bat -p"
 elif type "batcat" &> /dev/null; then
-  alias cat="batcat"
+  alias cat="batcat -p"
   alias bat="batcat"
 fi
 
