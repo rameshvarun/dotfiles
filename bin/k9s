@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+from utils import download_and_run, HomebrewSource, TarSource
+
+if __name__ == "__main__":
+    download_and_run(
+        TarSource(
+            "Linux",
+            "x86_64",
+            "https://github.com/derailed/k9s/releases/download/v0.32.0/k9s_Linux_amd64.tar.gz",
+            "3efa7e95695504d6fe8d12745368d8a908241c4949f631776aded2ddc506c6a6",
+            "k9s"
+        ),
+    )
