@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+from utils import download_and_run, HomebrewSource, TarSource
+
+if __name__ == "__main__":
+    download_and_run(
+        TarSource(
+            "Linux",
+            "x86_64",
+            "https://github.com/robscott/kube-capacity/releases/download/v0.8.0/kube-capacity_v0.8.0_linux_x86_64.tar.gz",
+            "610ce6e5d7f528df1c60d3b5e277d00ac43cdfd9ce4d36f0b3132bb68fc12cf3",
+            "kube-capacity"
+        ),
+    )
