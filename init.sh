@@ -35,6 +35,10 @@ if type "zellij" &> /dev/null; then
   function zrf () { zellij run --name "$*" --floating -- bash -ic "$*";}
   function ze () { zellij edit "$*";}
   function zef () { zellij edit --floating "$*";}
+
+  if [[ "$NERD_FONT" == "1" ]]; then
+    export ZELLIJ_CONFIG_FILE="$HOME/dotfiles/zellij/config.nerdfont.kdl"
+  fi
 fi
 
 # Interactive CD using FZF.
