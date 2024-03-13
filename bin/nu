@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+from utils import download_and_run, HomebrewSource, TarSource
+
+if __name__ == "__main__":
+    download_and_run(
+        HomebrewSource("nushell", "bin/nu"),
+        TarSource(
+            "Linux",
+            "x86_64",
+            "https://github.com/nushell/nushell/releases/download/0.91.0/nu-0.91.0-x86_64-linux-gnu-full.tar.gz",
+            "e5c4b14f22854be197e629487c35ba50d69922a90b5ba20b2dedeee8506c2ac3",
+            "nu-0.91.0-x86_64-linux-gnu-full/nu"
+        ),
+    )

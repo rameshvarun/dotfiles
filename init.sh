@@ -30,6 +30,11 @@ elif type "exa" &> /dev/null; then
   alias ls="exa"
 fi
 
+# Alias fd -> fdfind if available.
+if type "fdfind" &> /dev/null; then
+  alias fd="fdfind"
+fi
+
 if type "zellij" &> /dev/null; then
   function zr () { zellij run --name "$*" -- bash -ic "$*";}
   function zrf () { zellij run --name "$*" --floating -- bash -ic "$*";}
