@@ -5,8 +5,9 @@ import requests
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
+SYSTEM_PROMPT = """You are a helpful assistant."""
+
 if __name__ == "__main__":
-    prompt = f"""{sys.argv[1]}"""
     response = requests.post("https://api.openai.com/v1/chat/completions", headers={
         "Content-Type": "application/json",
         "Authorization": f"Bearer {OPENAI_API_KEY}",
@@ -15,7 +16,11 @@ if __name__ == "__main__":
         "messages": [
             {
                 "role": "system",
-                "content": prompt
+                "content": SYSTEM_PROMPT
+            },
+            {
+                "role": "user",
+                "content": sys.argv[1]
             }
         ]
     })
