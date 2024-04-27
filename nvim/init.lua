@@ -51,11 +51,14 @@ vim.cmd[[colorscheme catppuccin-mocha]]
 require('gitsigns').setup()
 
 if nerd_font then
-	require("neo-tree").setup()
+	require("neo-tree").setup({
+		window = {position = "float"}
+	})
 	require("bufferline").setup()
 	require('lualine').setup()
 else
 	require("neo-tree").setup({
+		window = {position = "float"},
 		default_component_configs = {
 			icon = { enabled = false },
 			git_status = { symbols = false }
