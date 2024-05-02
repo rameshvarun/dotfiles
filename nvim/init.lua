@@ -27,7 +27,8 @@ require("lazy").setup({
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
-	{'lewis6991/gitsigns.nvim'}
+	{'lewis6991/gitsigns.nvim'},
+	{'numToStr/Comment.nvim'}
 })
 
 vim.opt.number = true
@@ -42,6 +43,7 @@ vim.api.nvim_create_user_command('Buffers', require('telescope.builtin').buffers
 vim.api.nvim_create_user_command('Buf', require('telescope.builtin').buffers, {})
 
 vim.api.nvim_create_user_command('Tree', "Neotree toggle", {})
+vim.api.nvim_create_user_command('Reveal', "Neotree reveal", {})
 vim.api.nvim_create_user_command('Blame', "Gitsigns blame_line", {})
 vim.api.nvim_create_user_command('Def', vim.lsp.buf.definition, {})
 
@@ -49,6 +51,7 @@ vim.opt.termguicolors = true
 vim.cmd[[colorscheme catppuccin-mocha]]
 
 require('gitsigns').setup()
+require('Comment').setup()
 
 if nerd_font then
 	require("neo-tree").setup({
