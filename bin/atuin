@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+from utils import download_and_run, HomebrewSource, TarSource
+
+if __name__ == "__main__":
+    download_and_run(
+        TarSource(
+            "Linux",
+            "x86_64",
+            "https://github.com/atuinsh/atuin/releases/download/v18.2.0/atuin-v18.2.0-x86_64-unknown-linux-gnu.tar.gz",
+            "51ce72545c626a97149e6d141ca53e3f378895568ad39a99e5adace8b95fb6e5",
+            "atuin-v18.2.0-x86_64-unknown-linux-gnu/atuin"
+        ),
+    )
