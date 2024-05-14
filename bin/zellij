@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+from utils import download_and_run, HomebrewSource, TarSource
+
+if __name__ == "__main__":
+    download_and_run(
+        TarSource(
+            "Linux",
+            "x86_64",
+            "https://github.com/zellij-org/zellij/releases/download/v0.40.1/zellij-x86_64-unknown-linux-musl.tar.gz",
+            "a9fd3ef2d9bb2fd829e0ce024e9b0d718b8b5140de6194484cc1110ed324370f",
+            "zellij"
+        ),
+    )
