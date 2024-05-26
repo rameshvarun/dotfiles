@@ -3,6 +3,7 @@ from utils import download_and_run, HomebrewSource, TarSource
 
 if __name__ == "__main__":
     download_and_run(
+        HomebrewSource("atuin", "bin/atuin"),
         TarSource(
             "Linux",
             "x86_64",
