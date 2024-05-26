@@ -58,8 +58,11 @@ class HomebrewSource:
         return platform.system() == "Darwin"
 
     def fetch_and_run(self):
-        ensure_brew_package(self.package_name)
         prefix = subprocess.check_output(f"brew --prefix {self.package_name}", shell=True, encoding="utf-8").strip()
+        
+        if not os.path.exists(f"{prefix}/{self.executable_path}"):
+            ensure_brew_package(self.package_name)
+        
         subprocess.run([f"{prefix}/{self.executable_path}"] + sys.argv[1:])
 
 def download_and_run(*sources: HomebrewSource):
