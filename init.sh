@@ -46,7 +46,7 @@ if type "zellij" &> /dev/null; then
   fi
 
   function zj () {
-    zellij attach --create $(hostname)
+    zellij attach --create
   }
 fi
 
