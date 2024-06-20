@@ -44,6 +44,10 @@ if type "zellij" &> /dev/null; then
   if [[ "$NERD_FONT" == "1" ]]; then
     export ZELLIJ_CONFIG_FILE="$HOME/dotfiles/zellij/config.nerdfont.kdl"
   fi
+
+  function zj () {
+    zellij attach --create $(hostname)
+  }
 fi
 
 # Interactive CD using FZF.
