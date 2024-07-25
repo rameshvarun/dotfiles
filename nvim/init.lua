@@ -28,7 +28,8 @@ require("lazy").setup({
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'lewis6991/gitsigns.nvim'},
-	{'numToStr/Comment.nvim'}
+	{'numToStr/Comment.nvim'},
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl"}
 })
 
 vim.opt.number = true
@@ -52,6 +53,7 @@ vim.cmd[[colorscheme catppuccin-mocha]]
 
 require('gitsigns').setup()
 require('Comment').setup()
+require("ibl").setup()
 
 if nerd_font then
 	require("neo-tree").setup({
