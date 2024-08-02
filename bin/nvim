@@ -1,14 +1,25 @@
 #!/usr/bin/env python3
-from utils import download_and_run, HomebrewSource, TarSource
+import subprocess
+
+from pathlib import Path
+from utils import download_and_run, HomebrewSource, TarSource, AptSource
+
+DOTFILES_ROOT = Path(__file__).parent.parent
+CONFIG_FOLDER = Path.home() / ".config"
 
 if __name__ == "__main__":
+    if not (CONFIG_FOLDER / "nvim").exists():
+        subprocess.check_call(f"mkdir -p ~/.config", shell=True)
+        subprocess.check_call(f"ln -s {DOTFILES_ROOT}/nvim/ ~/.config/nvim", shell=True)
+
     download_and_run(
         HomebrewSource("neovim", "bin/nvim"),
         TarSource(
             "Linux",
             "x86_64",
-            "https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz",
-            "44ee395d9b5f8a14be8ec00d3b8ead34e18fe6461e40c9c8c50e6956d643b6ca",
+            "https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz",
+            "4867de01a17f6083f902f8aa5215b40b0ed3a36e83cc0293de3f11708f1f9793",
             "nvim-linux64/bin/nvim"
         ),
+        AptSource("neovim", "/usr/bin/nvim")
     )
