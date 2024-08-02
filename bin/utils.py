@@ -65,6 +65,20 @@ class HomebrewSource:
         
         subprocess.run([f"{prefix}/{self.executable_path}"] + sys.argv[1:])
 
+class AptSource:
+    def __init__(self, package_name: str, exec_path: str):
+        self.package_name = package_name
+        self.exec_path = exec_path
+
+    def is_match(self):
+        return subprocess.run("which apt", shell=True).returncode == 0
+
+    def fetch_and_run(self):
+        if not os.path.exists(self.exec_path):
+            subprocess.run(f"apt install -y {self.package_name}", shell=True)
+        
+        subprocess.run([self.exec_path] + sys.argv[1:])
+
 def download_and_run(*sources: HomebrewSource):
     for source in sources:
         if source.is_match():
