@@ -10,6 +10,8 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=" .. lazyversion,
     lazypath,
   })
+else
+  vim.fn.system("cd " .. lazypath .. " && git checkout " .. lazyversion)
 end
 vim.opt.rtp:prepend(lazypath)
 
