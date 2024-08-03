@@ -1,4 +1,5 @@
 -- Bootstrap Lazy.nvim
+local lazyversion = "v11.14.1"
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -6,7 +7,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=v10.16.0",
+    "--branch=" .. lazyversion,
     lazypath,
   })
 end
