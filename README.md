@@ -2,25 +2,16 @@
 
 ## Installing
 ```bash
-cd ~
-git clone --recursive git@github.com:rameshvarun/dotfiles.git
-cd dotfiles && ./install.sh
-```
+git clone --recursive git@github.com:rameshvarun/dotfiles.git ~/dotfiles
 
-If submodules have been added since the last `git pull`, you need to run:
+# For ZSH
+echo "source ~/dotfiles/init.zsh" >> ~/.zshrc
+
+# For BASH
+echo "source ~/dotfiles/init.sh" >> ~/.bashrc
+```
+If submodules have been added since the last `git pull`, run:
 
 ```bash
 git submodule update --init --recursive
-```
-
-## Tools
-
-```bash
-brew install vim neovim emacs zsh fzf ag tldr ffmpeg bat htop
-```
-
-## Sublime Text
-On Mac:
-```bash
-ln -s $PWD/sublime "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 ```
