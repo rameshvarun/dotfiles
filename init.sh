@@ -6,10 +6,6 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 # If Neovim is installed, alias vim and vi to nvim,
 # and set it as the editor.
 if type "nvim" &> /dev/null; then
-  alias vi="nvim"
-  alias vim="nvim"
-  alias vimdiff="nvim -d"
-  
   export VISUAL=nvim
   export EDITOR="$VISUAL"
 fi

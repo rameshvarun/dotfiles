@@ -28,9 +28,6 @@ Plug 'terryma/vim-expand-region' " Increasing select larger regions.
 
 Plug 'easymotion/vim-easymotion' " Easymotion.
 
-" Custom start screen.
-Plug 'mhinz/vim-startify'
-
 Plug 'bling/vim-airline' " Status line.
 Plug 'scrooloose/nerdtree' " Better file tree.
 Plug 'scrooloose/nerdcommenter' " Manipulate comments.
@@ -57,9 +54,6 @@ Plug 'udalov/kotlin-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb', { 'on': 'Gbrowse' }
-
-Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file and buffer search.
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Focus mode.
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
