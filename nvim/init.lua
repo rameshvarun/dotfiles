@@ -32,8 +32,13 @@ require("lazy").setup({
 	{'hrsh7th/nvim-cmp'},
 	{'lewis6991/gitsigns.nvim'},
 	{'numToStr/Comment.nvim'},
+	{"williamboman/mason.nvim"},
+	{"williamboman/mason-lspconfig.nvim"},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl"}
 })
+
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 vim.opt.number = true
 vim.opt.ignorecase = true
@@ -99,3 +104,4 @@ cmp.setup {
 }
 
 require'lspconfig'.pyright.setup{}
+require'lspconfig'.tsserver.setup{}
