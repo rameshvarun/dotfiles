@@ -51,6 +51,8 @@ vim.api.nvim_create_user_command('RG', require('telescope.builtin').live_grep, {
 vim.api.nvim_create_user_command('Buffers', require('telescope.builtin').buffers, {})
 vim.api.nvim_create_user_command('Buf', require('telescope.builtin').buffers, {})
 
+vim.api.nvim_create_user_command('CurrentFile', "echo expand('%:p')", {})
+
 vim.api.nvim_create_user_command('Tree', "Neotree toggle", {})
 vim.api.nvim_create_user_command('Reveal', "Neotree reveal", {})
 vim.api.nvim_create_user_command('Blame', "Gitsigns blame_line", {})
