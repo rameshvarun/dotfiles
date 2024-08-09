@@ -38,7 +38,9 @@ require("lazy").setup({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = { "pyright", "tsserver" },
+})
 
 vim.opt.number = true
 vim.opt.ignorecase = true
