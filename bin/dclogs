@@ -1,37 +1,58 @@
 #!/usr/bin/env python3
+
+"""
+A fast way to tail docker compose logs using fzf.
+"""
+
 import subprocess
 import argparse
 import json
 import sys
 
-def get_container_name(query: str | None) -> str:
+
+def get_container_name(names: list[str], query: str | None) -> str:
+    # If the query matches only one container, just return that.
     if query:
         matching_names = [n for n in names if args.query in n]
         if len(matching_names) == 1:
             return matching_names[0].strip()
-        
 
+    # Otherwise, select the container using fzf.
     fzf_args = ["fzf"]
     if query:
-        fzf_args.append(f'--query={args.query}')
+        fzf_args.append(f"--query={args.query}")
 
-    return subprocess.check_output(fzf_args, encoding="utf-8", input="\n".join(names)).strip()
+    return subprocess.check_output(
+        fzf_args, encoding="utf-8", input="\n".join(names)
+    ).strip()
+
 
 def get_compose_projects() -> list[str]:
-    result = json.loads(subprocess.check_output("docker compose ls --format json", shell=True))
-    return [r['Name'] for r in result]
+    """List all active docker compose projects."""
+    result = json.loads(
+        subprocess.check_output("docker compose ls --format json", shell=True)
+    )
+    return [r["Name"] for r in result]
+
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("query", nargs="?", default=None)
+    parser = argparse.ArgumentParser(description="Tail docker compose logs.")
+    parser.add_argument(
+        "query", nargs="?", default=None, help="Optional container name search query."
+    )
     args = parser.parse_args()
 
+    # Check if the compose project can be automatically determined.
     result = subprocess.run("docker compose config -q", shell=True, capture_output=True)
     if result.returncode != 0:
         projects = get_compose_projects()
         print("No docker compose config found. Use one of the projects:", projects)
         sys.exit(1)
 
-    names = subprocess.check_output("docker compose --profile=* ps --format '{{.Names}}'", shell=True, encoding="utf-8").split()
-    container = get_container_name(args.query)
+    container_names = subprocess.check_output(
+        "docker compose --profile=* ps --all --orphans --format '{{.Names}}'",
+        shell=True,
+        encoding="utf-8",
+    ).split()
+    container = get_container_name(container_names, args.query)
     subprocess.check_call(f"docker logs -f {container}", shell=True, encoding="utf-8")
